@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kodilla.XOgame.controller.GameSceneController">
+
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="31.0" layoutY="8.0" prefHeight="65.0" prefWidth="519.0" text="MAIN LABEL" />
+
+      <Button fx:id="id1" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="32.0" layoutY="82.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="128.0" prefWidth="172.0" textAlignment="CENTER">
+         <font>
+            <Font size="80.0" />
+         </font></Button>
+      <Button fx:id="id2" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="204.0" layoutY="82.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="128.0" prefWidth="172.0" textAlignment="CENTER">
+         <font>
+            <Font size="80.0" />
+         </font></Button>
+      <Button fx:id="id3" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="376.0" layoutY="82.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="128.0" prefWidth="172.0" textAlignment="CENTER">
+         <font>
+            <Font size="80.0" />
+         </font></Button>
+
+      <Button fx:id="id4" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="32.0" layoutY="251.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="128.0" prefWidth="172.0" textAlignment="CENTER">
+         <font>
+            <Font size="80.0" />
+         </font></Button>
+      <Button fx:id="id5" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="204.0" layoutY="251.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="128.0" prefWidth="172.0" textAlignment="CENTER">
+         <font>
+            <Font size="80.0" />
+         </font></Button>
+      <Button fx:id="id6" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="376.0" layoutY="251.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="128.0" prefWidth="172.0" textAlignment="CENTER">
+         <font>
+            <Font size="80.0" />
+         </font></Button>
+
+      <Button fx:id="id7" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="32.0" layoutY="421.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="128.0" prefWidth="172.0" textAlignment="CENTER">
+         <font>
+            <Font size="80.0" />
+         </font></Button>
+      <Button fx:id="id8" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="204.0" layoutY="421.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="128.0" prefWidth="172.0" textAlignment="CENTER">
+         <font>
+            <Font size="80.0" />
+         </font></Button>
+      <Button fx:id="id9" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="376.0" layoutY="421.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="128.0" prefWidth="172.0" textAlignment="CENTER">
+         <font>
+            <Font size="80.0" />
+         </font></Button>
+   </children>
+</Pane>
