@@ -17,22 +17,21 @@ public class WinChecker {
     private Set<String> diag2 = new HashSet<>(Arrays.asList("id3", "id5", "id7"));
 
 
-     boolean winConditionCheck(Set<String> playerScoreSet) {
+    boolean winConditionCheck(Set<String> playerScoreSet) {
 
-        if (playerScoreSet.equals(row1) ||
-                playerScoreSet.equals(row2) ||
-                playerScoreSet.equals(row3) ||
+        if (playerScoreSet.containsAll(row1) ||
+                playerScoreSet.containsAll(row2) ||
+                playerScoreSet.containsAll(row3) ||
 
-                playerScoreSet.equals(col1) ||
-                playerScoreSet.equals(col2) ||
-                playerScoreSet.equals(col3) ||
+                playerScoreSet.containsAll(col1) ||
+                playerScoreSet.containsAll(col2) ||
+                playerScoreSet.containsAll(col3) ||
 
-                playerScoreSet.equals(diag1) ||
-                playerScoreSet.equals(diag2)) {
+                playerScoreSet.containsAll(diag1) ||
+                playerScoreSet.containsAll(diag2)) {
 
             return true;
         }
         return false;
-
     }
 }
