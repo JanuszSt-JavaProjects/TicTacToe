@@ -49,7 +49,7 @@ public class MainLogic extends Main {
 
     }
 
-    public void gameMoves(Button pressedButton) {
+    public void gameExecute(Button pressedButton) {
 
         // Player move
         if (continueGame) {

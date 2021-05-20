@@ -60,6 +60,6 @@ public class GameSceneController {
     @FXML
     public void buttonAction(ActionEvent event) {
         Button usedButton = (Button) event.getSource();
-        startMainLogic.gameMoves(usedButton);
+        startMainLogic.gameExecute(usedButton);
     }
 }
