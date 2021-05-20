@@ -53,35 +53,43 @@ public class MainLogic extends Main {
 
         // Player move
         if (continueGame) {
-            pressedButton.setText("X");
-            pressedButton.setDisable(true);
-
-            buttonsSet.remove(pressedButton);
-
-            String pressedButtonId = pressedButton.getId();
-            playerScoreIdSet.add(pressedButtonId);
-
-            winConditionsCheck(playerScoreIdSet, "You Win !!!");
+            performPlayerMovie(pressedButton);
         }
 
         // Computer move
         if (continueGame) {
-            shuffler();
-            computerButtonChoiceQueue.clear();
-            computerButtonChoiceQueue.addAll(buttonsSet.stream().toList());
+            performComputerMovie();
+        }
+    }
 
-            computerButton = computerButtonChoiceQueue.pollFirst();
-            try {
-                computerScoreIdSet.add(computerButton.getId());
+    private void performPlayerMovie(Button pressedButton) {
+        pressedButton.setText("X");
+        pressedButton.setDisable(true);
 
-                computerButton.setText("O");
-                computerButton.setDisable(true);
-                winConditionsCheck(computerScoreIdSet, "Computer WINS !");
-                buttonsSet.remove(computerButton);
+        buttonsSet.remove(pressedButton);
 
-            } catch (NullPointerException e) {
-                zeroSizeConditionCheck();
-            }
+        String pressedButtonId = pressedButton.getId();
+        playerScoreIdSet.add(pressedButtonId);
+
+        winConditionsCheck(playerScoreIdSet, "You Win !!!");
+    }
+
+    private void performComputerMovie() {
+        shuffler();
+        computerButtonChoiceQueue.clear();
+        computerButtonChoiceQueue.addAll(buttonsSet.stream().toList());
+
+        computerButton = computerButtonChoiceQueue.pollFirst();
+        try {
+            computerScoreIdSet.add(computerButton.getId());
+
+            computerButton.setText("O");
+            computerButton.setDisable(true);
+            winConditionsCheck(computerScoreIdSet, "Computer WINS !");
+            buttonsSet.remove(computerButton);
+
+        } catch (NullPointerException e) {
+            zeroSizeConditionCheck();
         }
     }
 
