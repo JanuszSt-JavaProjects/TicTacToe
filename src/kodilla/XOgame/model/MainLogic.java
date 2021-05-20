@@ -94,23 +94,11 @@ public class MainLogic extends Main {
     }
 
     private void winConditionsCheck(Set<String> gamerScoreSet, String specifiedGamerWinText) {
-        if (winChecker.winConditionCheck(gamerScoreSet)) {
-
-            label.setText(String.valueOf(specifiedGamerWinText));
-
-            for (Button button : buttonsSet) {
-                button.setDisable(true);
-            }
-            continueGame = false;
-
-            try {
-                stop();
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        }
+        winChecker.endGameExecute(gamerScoreSet, specifiedGamerWinText);
 
     }
+
+
 
     void zeroSizeConditionCheck() {
         if ((computerButtonChoiceQueue.size() == 0) || (buttonsSet.size() == 0)) {
