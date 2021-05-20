@@ -1,12 +1,10 @@
 package kodilla.XOgame.model;
 
-import javafx.scene.control.Button;
-
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class WinChecker extends MainLogic{
+public class WinChecker {
     private Set<String> row1 = new HashSet<>(Arrays.asList("id1", "id2", "id3"));
     private Set<String> row2 = new HashSet<>(Arrays.asList("id4", "id5", "id6"));
     private Set<String> row3 = new HashSet<>(Arrays.asList("id7", "id8", "id9"));
@@ -36,23 +34,4 @@ public class WinChecker extends MainLogic{
         }
         return false;
     }
-
-    void endGameExecute(Set<String> gamerScoreSet, String specifiedGamerWinText) {
-        if (winConditionCheck(gamerScoreSet)) {
-
-            label.setText(String.valueOf(specifiedGamerWinText));
-
-            for (Button button : buttonsSet) {
-                button.setDisable(true);
-            }
-            continueGame = false;
-
-            try {
-                stop();
-            } catch (Exception exception) {
-                exception.printStackTrace();
-            }
-        }
-    }
-
 }

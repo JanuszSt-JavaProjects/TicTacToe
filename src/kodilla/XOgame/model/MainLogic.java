@@ -75,7 +75,7 @@ public class MainLogic extends Main {
     }
 
     private void performComputerMovie() {
-        shuffler();
+        ButtonsSetShuffler();
         computerButtonChoiceQueue.clear();
         computerButtonChoiceQueue.addAll(buttonsSet.stream().toList());
 
@@ -89,18 +89,30 @@ public class MainLogic extends Main {
             buttonsSet.remove(computerButton);
 
         } catch (NullPointerException e) {
-            zeroSizeConditionCheck();
+            drawResultCheck();
         }
     }
 
     private void winConditionsCheck(Set<String> gamerScoreSet, String specifiedGamerWinText) {
-        winChecker.endGameExecute(gamerScoreSet, specifiedGamerWinText);
+        if (winChecker.winConditionCheck(gamerScoreSet)) {
+
+            label.setText(String.valueOf(specifiedGamerWinText));
+
+            for (Button button : buttonsSet) {
+                button.setDisable(true);
+            }
+            continueGame = false;
+
+            try {
+                stop();
+            } catch (Exception exception) {
+                exception.printStackTrace();
+            }
+        }
 
     }
 
-
-
-    void zeroSizeConditionCheck() {
+    void drawResultCheck() {
         if ((computerButtonChoiceQueue.size() == 0) || (buttonsSet.size() == 0)) {
             label.setText(" DRAW - nobody wins.");
             continueGame = false;
@@ -113,7 +125,7 @@ public class MainLogic extends Main {
         }
     }
 
-    void shuffler() {
+    void ButtonsSetShuffler() {
         ArrayList<Button> shuffledList = new ArrayList<>(buttonsSet);
         Collections.shuffle(shuffledList);
     }
